@@ -1,25 +1,23 @@
-#Puppet Stand-alone installation in Ubuntu
+Steps for adding different modules:
 
-	sudo apt-get install puppet-common
+1. In nodes.pp file we can include different modules.
+2. For creating a Create a directory named apache
+3. Inside that there should be directory named manifests
+4. Inside the manifests directory there should be file named init.pp. In this file it should have puppet script for installing apache.
+5. There should a nodes.pp inside that we can include different modules.
 
-##How to execute puppet script as verbose mode
+Guidelines for creating puppet script:
 
-	puppet apply --verbose site.pp
+Try to develop the script as seperate classes as in init.pp of apache so that we can include diffent classes as follows:
 
-## sample puppet script for installing nginx
+class apache::install {
 
+       --------------
 
-	case $operatingsystem {
-	centos: { $apache = "nginx" }
-	# Note that these matches are case-insensitive.
-	redhat: { $apache = "nginx" }
-	debian: { $apache = "nginx" }
-	ubuntu: { $apache = "nginx" }
-	default: { fail("Unrecognized operating system for webserver") }
-	# "fail" is a function. We'll get to those later.
-	}
-	package {'nginx':
-	name => $nginx,
-	ensure => latest,
-	}
+class apache::otheroption {
 
+        -------------
+
+class apache {
+        include apache::install, apache::otheroption
+        }
