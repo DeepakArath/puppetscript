@@ -4,7 +4,7 @@ This puppet script different modules that needed for various server side install
 
 **Server Configuration Management Setup**
 
-Install Git and Puppet
+Install Git and Puppet...
 
 `sudo apt-get install -y git-core puppet`
 
