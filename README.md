@@ -1,4 +1,4 @@
-### Netspective Puppet Script for Server Side Installations and Configurations
+##### Netspective Puppet Script for Server Side Installations and Configurations
 
 This puppet script different modules that needed for various server side installations and configurations. Configured eash installation/configuration as seprate modules.
 
